@@ -27,7 +27,7 @@ Larchとは、XAFS解析をpythonのコードで行う方法である。
 
 7. sh GetLarch.sh と入力し、処理を待つ。
 
-以下、https://xraypy.github.io/xraylarch/installation.html#install-lin　　　　　　　　　　　　　　　　　　　　　　　　　　
+以下、https://xraypy.github.io/xraylarch/installation.html#install-lin
 の1.3 Installing into an existing Anaconda Python environmentに書いてある操作を行う。
 
 8. conda activate と入力する。(base)と表示されたら正しい。
