@@ -56,8 +56,7 @@ Larchとは、XAFS解析をpythonのコードで行う方法である。
      正しくImportできるか確かめる。
 
 (17. でErrorが出た場合...)
-python と入力し、
-の後ろに、from larch import Interpreterと入力する。
+python と入力した後に、from larch import Interpreterと入力する。
 正しくImportされていたら、>>>と出力される。→pip install notebook を改めて入力。
 Errorとなったら正しくインストールできていないため、最初からやり直す。
 
