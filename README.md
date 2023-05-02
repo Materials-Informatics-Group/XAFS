@@ -70,5 +70,5 @@ https://qiita.com/inashiro/items/f1c10440618cf73a2d81
 import larch_plugins as lp は、動きません。
 (この部分だけ変更されているみたいです)
 
-利用できるモジュールは以下のサイトのとおりです。
+利用できるモジュールは次のサイトのとおりです。
 https://xraypy.github.io/xraylarch/python.html
