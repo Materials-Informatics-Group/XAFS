@@ -1,3 +1,9 @@
+#ユーザーが各自で調整すべき部分は以下の通りです。
+
+#32・33行目のfolder_pathとoutput_folderのパス部分
+#91行目の「XANES極小値」を示すデータポイントの最小値 (index部分で調整可能、デフォルトは1)
+#155-170行目の、tsvファイルを読み込む部分で、分析対象元素(Elemnt)と吸収端(基本的にK)がペアとなっている行番号 (入力する値は、行番号-1)
+
 from larch import Interpreter
 session = Interpreter()
 import larch
@@ -23,8 +29,8 @@ import time
 start_time = time.time()
 
 # Aフォルダ内の.txtファイルに対して処理を行う
-folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice'
-output_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice2'  # 出力フォルダ名
+folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice' #規格化前の生データが入っているフォルダをパス表示で入力してください。
+output_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice2'  # 規格化後の生データを収集できるフォルダをパス表示で入力してください。
 
 # Aフォルダ内の.txtファイルに対して処理を行う
 for filename in os.listdir(folder_path):
@@ -32,7 +38,7 @@ for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         output_path = os.path.join(output_folder, f'{os.path.splitext(filename)[0]}_flattened.txt')
 
-        # データの読み込みと前処理
+        # データの読み込みと規格化
         dat = io.read_ascii(file_path, labels="energy mu")
         pre_edge(dat, _larch=session)
 
@@ -44,7 +50,7 @@ for filename in os.listdir(folder_path):
             for item in combined_list:
                 file.write(f'{item[0]}\t{item[1]}\n')
 
-
+#規格化後のデータに対して、スペクトルを作成していきます。
 folder_path = output_folder
 file_list = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.txt')]
 
@@ -82,7 +88,7 @@ for file_name in file_list:
     threshold = 0.1  # 閾値
     min_energy_point = pd.DataFrame(columns=df.columns)  # 空のDataFrameを作成
     for index, row in df.iterrows():
-        if index >= 1 and row['mu_3'] >= threshold: #閾値は各自設定
+        if index >= 1 and row['mu_3'] >= threshold: #index >= 内の数値は、各自で設定してください。吸収端前のノイズを除去することができます。
             min_energy_point = df[index:].nsmallest(1, 'energy')
             break
     
@@ -147,7 +153,7 @@ file_list1 = [os.path.join(folder_path1, f) for f in os.listdir(folder_path1) if
 slash_count1 = folder_path1.count('/')
 
 ################################################################
-#以下のfor文はtsvファイルの'Element'が位置する行によって、手動で変更が必要
+#以下のfor文はtsvファイルの'Element'が位置する行によって、各自で適宜調整してください。
 ################################################################
 result_list = []
 for file_name in file_list1:
@@ -158,10 +164,10 @@ for file_name in file_list1:
         with open(file_name, 'r') as tsvfile:
             reader = csv.reader(tsvfile, delimiter='\t')
             for i, row in enumerate(reader):
-                if i == 29 :
+                if i == 29 :  #i ==の数値部分は、ユーザーが各自で設定してください。
                     cell_value = row[1]
                     parts = cell_value.split(' ')
-                    element = parts[0]
+                    element = parts[0] #基本的にこの部分は0でよいです。
                     
                     # 結果をリストに追加します
                     result_list.append([file_name1, element])
