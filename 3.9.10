@@ -1,70 +1,1 @@
-Collecting package metadata (current_repodata.json): ...working... done
-Solving environment: ...working... done
-
-## Package Plan ##
-
-  environment location: /home/miyasaka/xraylarch/envs/xraylarch
-
-  added / updated specs:
-    - python
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    python-3.11.3              |h2755cc3_0_cpython        29.6 MB  conda-forge
-    setuptools-67.7.2          |     pyhd8ed1ab_0         569 KB  conda-forge
-    ------------------------------------------------------------
-                                           Total:        30.2 MB
-
-The following NEW packages will be INSTALLED:
-
-  _libgcc_mutex      conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge 
-  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-2_gnu 
-  bzip2              conda-forge/linux-64::bzip2-1.0.8-h7f98852_4 
-  ca-certificates    conda-forge/linux-64::ca-certificates-2022.12.7-ha878542_0 
-  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.40-h41732ed_0 
-  libexpat           conda-forge/linux-64::libexpat-2.5.0-hcb278e6_1 
-  libffi             conda-forge/linux-64::libffi-3.4.2-h7f98852_5 
-  libgcc-ng          conda-forge/linux-64::libgcc-ng-12.2.0-h65d4601_19 
-  libgomp            conda-forge/linux-64::libgomp-12.2.0-h65d4601_19 
-  libnsl             conda-forge/linux-64::libnsl-2.0.0-h7f98852_0 
-  libsqlite          conda-forge/linux-64::libsqlite-3.40.0-h753d276_1 
-  libuuid            conda-forge/linux-64::libuuid-2.38.1-h0b41bf4_0 
-  libzlib            conda-forge/linux-64::libzlib-1.2.13-h166bdaf_4 
-  ncurses            conda-forge/linux-64::ncurses-6.3-h27087fc_1 
-  openssl            conda-forge/linux-64::openssl-3.1.0-hd590300_2 
-  pip                conda-forge/noarch::pip-23.1.2-pyhd8ed1ab_0 
-  python             conda-forge/linux-64::python-3.11.3-h2755cc3_0_cpython 
-  readline           conda-forge/linux-64::readline-8.2-h8228510_1 
-  setuptools         conda-forge/noarch::setuptools-67.7.2-pyhd8ed1ab_0 
-  tk                 conda-forge/linux-64::tk-8.6.12-h27826a3_0 
-  tzdata             conda-forge/noarch::tzdata-2023c-h71feb2d_0 
-  wheel              conda-forge/noarch::wheel-0.40.0-pyhd8ed1ab_0 
-  xz                 conda-forge/linux-64::xz-5.2.6-h166bdaf_0 
-
-
-
-Downloading and Extracting Packages
-python-3.11.3        | 29.6 MB   |            |   0% 
-setuptools-67.7.2    | 569 KB    |            |   0% [A
-setuptools-67.7.2    | 569 KB    | 2          |   3% [Apython-3.11.3        | 29.6 MB   |            |   0% 
-setuptools-67.7.2    | 569 KB    | ###3       |  34% [Apython-3.11.3        | 29.6 MB   |            |   0% 
-setuptools-67.7.2    | 569 KB    | #####6     |  56% [Apython-3.11.3        | 29.6 MB   |            |   1% 
-setuptools-67.7.2    | 569 KB    | #######8   |  79% [Apython-3.11.3        | 29.6 MB   | 1          |   1% python-3.11.3        | 29.6 MB   | 2          |   2% 
-setuptools-67.7.2    | 569 KB    | ########## | 100% [A
-setuptools-67.7.2    | 569 KB    | ########## | 100% [Apython-3.11.3        | 29.6 MB   | 2          |   2% python-3.11.3        | 29.6 MB   | 3          |   3% python-3.11.3        | 29.6 MB   | 3          |   4% python-3.11.3        | 29.6 MB   | 4          |   5% python-3.11.3        | 29.6 MB   | 5          |   5% python-3.11.3        | 29.6 MB   | 6          |   6% python-3.11.3        | 29.6 MB   | 7          |   7% python-3.11.3        | 29.6 MB   | 7          |   8% python-3.11.3        | 29.6 MB   | 8          |   9% python-3.11.3        | 29.6 MB   | 9          |   9% python-3.11.3        | 29.6 MB   | #          |  10% python-3.11.3        | 29.6 MB   | #          |  11% python-3.11.3        | 29.6 MB   | #1         |  12% python-3.11.3        | 29.6 MB   | #2         |  12% python-3.11.3        | 29.6 MB   | #2         |  13% python-3.11.3        | 29.6 MB   | #3         |  14% python-3.11.3        | 29.6 MB   | #4         |  14% python-3.11.3        | 29.6 MB   | #5         |  15% python-3.11.3        | 29.6 MB   | #5         |  16% python-3.11.3        | 29.6 MB   | #6         |  17% python-3.11.3        | 29.6 MB   | #7         |  17% python-3.11.3        | 29.6 MB   | #8         |  18% python-3.11.3        | 29.6 MB   | #8         |  19% python-3.11.3        | 29.6 MB   | #9         |  20% python-3.11.3        | 29.6 MB   | ##         |  20% python-3.11.3        | 29.6 MB   | ##1        |  21% python-3.11.3        | 29.6 MB   | ##1        |  22% python-3.11.3        | 29.6 MB   | ##2        |  23% python-3.11.3        | 29.6 MB   | ##3        |  24% python-3.11.3        | 29.6 MB   | ##4        |  25% python-3.11.3        | 29.6 MB   | ##5        |  25% python-3.11.3        | 29.6 MB   | ##6        |  26% python-3.11.3        | 29.6 MB   | ##7        |  27% python-3.11.3        | 29.6 MB   | ##7        |  28% python-3.11.3        | 29.6 MB   | ##8        |  29% python-3.11.3        | 29.6 MB   | ##9        |  30% python-3.11.3        | 29.6 MB   | ###        |  31% python-3.11.3        | 29.6 MB   | ###1       |  31% python-3.11.3        | 29.6 MB   | ###2       |  32% python-3.11.3        | 29.6 MB   | ###3       |  33% python-3.11.3        | 29.6 MB   | ###3       |  34% python-3.11.3        | 29.6 MB   | ###4       |  35% python-3.11.3        | 29.6 MB   | ###5       |  35% python-3.11.3        | 29.6 MB   | ###6       |  36% python-3.11.3        | 29.6 MB   | ###7       |  37% python-3.11.3        | 29.6 MB   | ###7       |  38% python-3.11.3        | 29.6 MB   | ###8       |  39% python-3.11.3        | 29.6 MB   | ###9       |  40% python-3.11.3        | 29.6 MB   | ####       |  40% python-3.11.3        | 29.6 MB   | ####1      |  41% python-3.11.3        | 29.6 MB   | ####2      |  42% python-3.11.3        | 29.6 MB   | ####2      |  43% python-3.11.3        | 29.6 MB   | ####3      |  44% python-3.11.3        | 29.6 MB   | ####4      |  45% python-3.11.3        | 29.6 MB   | ####5      |  45% python-3.11.3        | 29.6 MB   | ####6      |  46% python-3.11.3        | 29.6 MB   | ####7      |  47% python-3.11.3        | 29.6 MB   | ####8      |  48% python-3.11.3        | 29.6 MB   | ####9      |  49% python-3.11.3        | 29.6 MB   | #####      |  50% python-3.11.3        | 29.6 MB   | #####1     |  51% python-3.11.3        | 29.6 MB   | #####1     |  52% python-3.11.3        | 29.6 MB   | #####2     |  53% python-3.11.3        | 29.6 MB   | #####3     |  54% python-3.11.3        | 29.6 MB   | #####4     |  55% python-3.11.3        | 29.6 MB   | #####5     |  56% python-3.11.3        | 29.6 MB   | #####6     |  57% python-3.11.3        | 29.6 MB   | #####7     |  58% python-3.11.3        | 29.6 MB   | #####8     |  58% python-3.11.3        | 29.6 MB   | #####9     |  59% python-3.11.3        | 29.6 MB   | ######     |  60% python-3.11.3        | 29.6 MB   | ######1    |  61% python-3.11.3        | 29.6 MB   | ######1    |  62% python-3.11.3        | 29.6 MB   | ######2    |  63% python-3.11.3        | 29.6 MB   | ######3    |  64% python-3.11.3        | 29.6 MB   | ######4    |  65% python-3.11.3        | 29.6 MB   | ######5    |  66% python-3.11.3        | 29.6 MB   | ######6    |  67% python-3.11.3        | 29.6 MB   | ######7    |  68% python-3.11.3        | 29.6 MB   | ######8    |  69% python-3.11.3        | 29.6 MB   | ######9    |  70% python-3.11.3        | 29.6 MB   | #######    |  71% python-3.11.3        | 29.6 MB   | #######1   |  71% python-3.11.3        | 29.6 MB   | #######2   |  72% python-3.11.3        | 29.6 MB   | #######3   |  73% python-3.11.3        | 29.6 MB   | #######4   |  74% python-3.11.3        | 29.6 MB   | #######4   |  75% python-3.11.3        | 29.6 MB   | #######5   |  76% python-3.11.3        | 29.6 MB   | #######6   |  77% python-3.11.3        | 29.6 MB   | #######7   |  78% python-3.11.3        | 29.6 MB   | #######8   |  78% python-3.11.3        | 29.6 MB   | #######9   |  79% python-3.11.3        | 29.6 MB   | #######9   |  80% python-3.11.3        | 29.6 MB   | ########   |  81% python-3.11.3        | 29.6 MB   | ########1  |  81% python-3.11.3        | 29.6 MB   | ########2  |  82% python-3.11.3        | 29.6 MB   | ########3  |  83% python-3.11.3        | 29.6 MB   | ########3  |  84% python-3.11.3        | 29.6 MB   | ########4  |  85% python-3.11.3        | 29.6 MB   | ########5  |  86% python-3.11.3        | 29.6 MB   | ########6  |  87% python-3.11.3        | 29.6 MB   | ########7  |  87% python-3.11.3        | 29.6 MB   | ########8  |  88% python-3.11.3        | 29.6 MB   | ########9  |  89% python-3.11.3        | 29.6 MB   | #########  |  90% python-3.11.3        | 29.6 MB   | #########1 |  91% python-3.11.3        | 29.6 MB   | #########1 |  92% python-3.11.3        | 29.6 MB   | #########2 |  93% python-3.11.3        | 29.6 MB   | #########3 |  94% python-3.11.3        | 29.6 MB   | #########4 |  94% python-3.11.3        | 29.6 MB   | #########5 |  95% python-3.11.3        | 29.6 MB   | #########6 |  96% python-3.11.3        | 29.6 MB   | #########7 |  97% python-3.11.3        | 29.6 MB   | #########7 |  98% python-3.11.3        | 29.6 MB   | #########8 |  99% python-3.11.3        | 29.6 MB   | #########9 | 100% python-3.11.3        | 29.6 MB   | ########## | 100%                                                      
-                                                     [A
-Preparing transaction: ...working... done
-Verifying transaction: ...working... done
-Executing transaction: ...working... done
-#
-# To activate this environment, use
-#
-#     $ conda activate xraylarch
-#
-# To deactivate an active environment, use
-#
-#     $ conda deactivate
 
