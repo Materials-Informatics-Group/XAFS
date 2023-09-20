@@ -25,6 +25,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
      cd C:\Users\<YOURNAME>\Downloads
      GetLarch
 
+------------------------------------------------------------------------------
 
 3.コマンドプロンプトを開き、conda activate と入力する。(base)と表示されたら正しい。
 
