@@ -40,6 +40,8 @@ for i, (zip_patha, _) in enumerate(zip_paths_sorted):
     new_name = os.path.join(A_folder_path, str(i) + '.zip')
     os.rename(zip_path, new_name)
 ```
+上のコードを実行すると、zipファイルの名前が識別番号のみ (001.zip等)に変わります。
+
 改めて以下のコードを入力して下さい
 ```
 import os
