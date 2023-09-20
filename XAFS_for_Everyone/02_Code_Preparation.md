@@ -42,6 +42,8 @@ for i, (zip_patha, _) in enumerate(zip_paths_sorted):
 ```
 上のコードを実行すると、zipファイルの名前が識別番号のみ (001.zip等)に変わります。
 
+次に、このzipファイルの名前を利用して、txt(tsv)ファイルも変更します。
+
 改めて以下のコードを入力して下さい
 ```
 import os
