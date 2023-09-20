@@ -117,8 +117,8 @@ import math
 #C_folderには、#計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)のパスを記入してください。
 #つまり、2つのフォルダを作成しておく必要があります。
 
-A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111'
-C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part3'
+A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111' #利用者が適宜変更
+C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part3' #利用者が適宜変更
 
 file_list = [f for f in os.listdir(A_folder) if f.endswith('.txt')]
 
