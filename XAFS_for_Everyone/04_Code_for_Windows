@@ -28,6 +28,8 @@ start_time = time.time()
 #1.各データのtsvファイルで、分析対象元素(element)と予想されている物質名(substance)が記載されている部分をご確認ください。
 #folder_path1と、for文内のiの数値を、ユーザー各自で変更してください。
 #変更部分は、コメントで示しています。
+#tsvファイル名の先頭がデータ識別番号(数字)になっていることを確認してください。
+#例 : 0073_A.tsv
 
 #下のfolder_path1の''内に、tsvファイルが入っているフォルダーパスを入力してください。
 #folder_path1 = rの部分は変更しないでください。
@@ -66,6 +68,8 @@ result_df1 = result_df1.sort_values('Data_Number')
 #それぞれのフォルダーパスを、入力してください。
 #output_folderは、スペクトルで確認したいときに利用できます。
 #なお、''の前にあるrは変更しないでください。
+#txtファイル名の先頭がデータ識別番号(数字)になっていることを確認してください。
+#例 : 0073_A.txt
 
 input_folder = r'C:\Users\naoto\Videos\input'
 output_folder = r'C:\Users\naoto\Videos\output'
