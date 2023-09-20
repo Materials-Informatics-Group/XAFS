@@ -73,7 +73,7 @@ from larch import Interpreter
 
 2-1. GetLarch.sh scriptをダウンロードする。
 　　　
-     ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
+ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
 
 2-2. ターミナルを開き、以下のコマンドを入力する。
 ```
