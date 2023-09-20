@@ -107,3 +107,5 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 9.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
 
+## conda install -yc conda-forge xraylarchがうまく行かない場合 (全てのOSに共通)
+
