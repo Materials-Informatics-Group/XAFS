@@ -40,10 +40,9 @@ for i, (zip_patha, _) in enumerate(zip_paths_sorted):
     new_name = os.path.join(A_folder_path, str(i) + '.zip')
     os.rename(zip_path, new_name)
 ```
-
-#------------------------------------------------------------------------------
-#改めて以下のコードを入力して下さい
-
+------------------------------------------------------------------------------
+改めて以下のコードを入力して下さい
+```
 import os
 
 # Aフォルダのパスを指定
@@ -59,7 +58,7 @@ for folder_path in folder_paths:
             old_path = os.path.join(folder_path, file)
             new_path = os.path.join(folder_path, folder_path.split('/')[-1] + '_' + file)
             os.rename(old_path, new_path)
-
+```
 
 ## Part2-2
 #9809フォーマットの場合は、以下のコードを実施し、X線のエネルギーと吸収係数を求めてください。
