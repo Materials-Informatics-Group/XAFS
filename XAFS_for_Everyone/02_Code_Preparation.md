@@ -75,7 +75,8 @@ for folder_path in folder_paths:
 import os
 import numpy as np
 
-#A_folderには抽出前のデータ(生データ)が含まれているフォルダの、C_folderには抽出後のデータが含まれているフォルダのパスを記入してください。
+#A_folderには、抽出前のデータ(生データ)が含まれているフォルダのパスを記入してください。
+#C_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。
 #つまり、2つのフォルダを作成しておく必要があります。
 
 A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1' #利用者が適宜変更
@@ -105,15 +106,19 @@ for file_name in file_list:
 次に、抽出されたデータをもとに、X線のエネルギーと吸収係数を求めます。
 
 > [!NOTE]
-> 分光結晶や測定法によって、数値を変える必要があります。
+> **分光結晶**や**測定法**によって、数値を変える必要があります。
 
 ```
 import os
 import numpy as np
 import math
 
-A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111' #抽出後のデータが含まれているフォルダ(上のC_folderと同じパス)
-C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part3' #計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)
+#A_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。(上のC_folderと同じパス)
+#C_folderには、#計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)のパスを記入してください。
+#つまり、2つのフォルダを作成しておく必要があります。
+
+A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111'
+C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part3'
 
 file_list = [f for f in os.listdir(A_folder) if f.endswith('.txt')]
 
