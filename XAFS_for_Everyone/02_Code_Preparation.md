@@ -22,7 +22,7 @@
 
 import os
 
-# 番号をつけたいzipファイルが含まれているフォルダのパスを指定
+\# 番号をつけたいzipファイルが含まれているフォルダのパスを指定
 A_folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/01.RawData_Package/D.Group4(dat_ex3_txt_20210724-21_Spring_0658-2239)'
 
 # 指定したフォルダ内のzipファイルのパスとModificate_Dateを取得
