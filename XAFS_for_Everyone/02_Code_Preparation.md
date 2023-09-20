@@ -75,18 +75,18 @@ for folder_path in folder_paths:
 import os
 import numpy as np
 
-#A_folderには、抽出前のデータ(生データ)が含まれているフォルダのパスを記入してください。
-#C_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。
+#Before_folderには、抽出前のデータ(生データ)が含まれているフォルダのパスを記入してください。
+#Middle_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。
 #つまり、2つのフォルダを作成しておく必要があります。
 
-A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1' #利用者が適宜変更
-C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2' #利用者が適宜変更
+Before_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1' #利用者が適宜変更
+Middle_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2' #利用者が適宜変更
 
-file_list = [f for f in os.listdir(A_folder) if f.endswith('.txt')]
+file_list = [f for f in os.listdir(Before_folder) if f.endswith('.txt')]
 
 for file_name in file_list:
-    input_file_path = os.path.join(A_folder, file_name)
-    output_file_path = os.path.join(C_folder, file_name)
+    input_file_path = os.path.join(Before_folder, file_name)
+    output_file_path = os.path.join(Middle_folder, file_name)
     
     with open(input_file_path, 'r') as f:
         lines = f.readlines()
@@ -113,18 +113,18 @@ import os
 import numpy as np
 import math
 
-#A_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。(上のC_folderと同じパス)
-#C_folderには、#計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)のパスを記入してください。
+#Middle_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。(上のC_folderと同じパス)
+#After_folderには、#計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)のパスを記入してください。
 #つまり、2つのフォルダを作成しておく必要があります。
 
-A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111' #利用者が適宜変更
-C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part3' #利用者が適宜変更
+Middle_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111' #利用者が適宜変更
+After_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part3' #利用者が適宜変更
 
-file_list = [f for f in os.listdir(A_folder) if f.endswith('.txt')]
+file_list = [f for f in os.listdir(Middle_folder) if f.endswith('.txt')]
 
 for file_name in file_list:
-    input_file_path = os.path.join(A_folder, file_name)
-    output_file_path = os.path.join(C_folder, file_name)
+    input_file_path = os.path.join(Middle_folder, file_name)
+    output_file_path = os.path.join(After_folder, file_name)
     
     with open(input_file_path, 'r') as f:
         lines = f.readlines()
