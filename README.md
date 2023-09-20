@@ -109,7 +109,9 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 ## conda install -yc conda-forge xraylarchがうまく行かない場合 (全てのOSに共通)
 
-以下のコマンドを1行ずつ打つ
+以下のコマンドを1行ずつ打つ。
+
+ただし、4行目のepicsappsは除外しても良い。
 ```
 conda create -y --name xraylarch python=>3.10
 conda activate xraylarch
