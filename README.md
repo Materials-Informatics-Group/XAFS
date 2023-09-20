@@ -5,6 +5,8 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 なお、2023年9月現在、Larchの最新バージョンは**0.9.71**となります。
 
+また、Pythonの実行環境である**Anaconda**は、事前にインストールしてください。
+
 ## Windowsの場合
 
 1.https://xraypy.github.io/xraylarch/installation.html#install-lin を開く。
