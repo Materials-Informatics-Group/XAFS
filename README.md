@@ -91,11 +91,10 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
   ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
 
 3. ターミナルを開き、以下のコマンドを入力する。
-```   
+``` 
    cd Downloads
-
    sh GetLarch.sh
-```   
+``` 
 4.ターミナルを開き、conda activate と入力する。(base)と表示されたら正しい。
 
 5.conda update -y conda python pip と入力する。処理が終わるまで待つ。(全てのパッケージが最新バージョンになります)
