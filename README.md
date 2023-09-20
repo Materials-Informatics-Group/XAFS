@@ -39,7 +39,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
 
-======================(Macの場合)======================
+## Macの場合
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
 
 2.「1.1. Installing from a Binary installers」を見て、「Larch for MacOSX」をクリックし、Larch Binary Installersをダウンロードする。
