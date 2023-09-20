@@ -66,9 +66,9 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 2-2. ターミナルを開き、以下のコマンドを入力する。
      
-     cd C:\Users\<YOURNAME>\Downloads
-     
-     GetLarch
+   cd Downloads
+　　　
+   sh GetLarch.sh
    
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
