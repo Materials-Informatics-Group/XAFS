@@ -70,7 +70,7 @@ for folder_path in folder_paths:
 
 9809フォーマットの場合は、以下のコードを実施し、**X線のエネルギー**と**吸収係数**を求めてください。
 
-生データから、XAFSスペクトルに必要な2列目(Energy)・4列目・5列目(μt)を抽出します。
+このコードにより、生データからXAFSスペクトルに必要な2列目(Energy)・4列目・5列目(μt)の値を抽出します。
 ```
 import os
 import numpy as np
@@ -78,8 +78,8 @@ import numpy as np
 #A_folderには抽出前のデータ(生データ)が含まれているフォルダの、C_folderには抽出後のデータが含まれているフォルダのパスを記入してください。
 #つまり、2つのフォルダを作成しておく必要があります。
 
-A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1'
-C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2'
+A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1' #利用者が適宜変更
+C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2' #利用者が適宜変更
 
 file_list = [f for f in os.listdir(A_folder) if f.endswith('.txt')]
 
@@ -100,9 +100,14 @@ for file_name in file_list:
     
     np.savetxt(output_file_path, data, fmt='%.6f')
 ```
----------------------------------------------------------------------------------------------------
-#分光結晶や測定法によって、数値を変える必要があります。
 
+---------------------------------------------------------------------------------------------------
+次に、抽出されたデータをもとに、X線のエネルギーと吸収係数を求めます。
+
+> [!NOTE]
+> 分光結晶や測定法によって、数値を変える必要があります。
+
+```
 import os
 import numpy as np
 import math
