@@ -22,11 +22,10 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 2-1. 「1.1.1. Windows Notes」の GetLarch.bat scriptをクリックし、ダウンロードする。
 
 2-2. コマンドプロンプトを開き、以下のコマンドを入力する。
-     
-     cd C:\Users\<YOURNAME>\Downloads
-     
-     GetLarch
-     
+```     
+cd C:\Users\<YOURNAME>\Downloads
+GetLarch
+```    
 ------------------------------------------------------------------------------
 
 3.コマンドプロンプトを開き、conda activate と入力する。(base)と表示されたら正しい。
@@ -114,8 +113,8 @@ from larch import Interpreter
 
 3.ターミナルを開き、以下のコマンドを入力する。
 ``` 
-   cd Downloads
-   sh GetLarch.sh
+cd Downloads
+sh GetLarch.sh
 ``` 
 4.ターミナルを開き、conda activate と入力する。(base)と表示されたら正しい。
 
