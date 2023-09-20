@@ -1,6 +1,5 @@
 # 自身のPCにLarchをインストールする方法！
 
-(Larch環境を構築していない場合)
 https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧ください。
 
 なお、2023年9月現在、Larchの最新バージョンは**0.9.71**となります。
