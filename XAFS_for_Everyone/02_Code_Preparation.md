@@ -53,8 +53,6 @@ A_folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/01.RawData_Package/
 
 folder_paths = [os.path.join(A_folder_path, folder) for folder in os.listdir(A_folder_path) if os.path.isdir(os.path.join(A_folder_path, folder)) and folder.isdigit()]
 
-# 各フォルダ内の.txt, .tsvファイルの名前を変更
-# もとのファイル名の先頭にデータ識別番号が付け加わります。
 for folder_path in folder_paths:
     for file in os.listdir(folder_path):
         if file.endswith('.txt'): #'.tsv'と変えても良い
