@@ -1,9 +1,3 @@
-#ユーザーが各自で調整すべき部分は以下の通りです。
-
-#32・33行目のfolder_pathとoutput_folderのパス部分
-#91行目の「XANES極小値」を示すデータポイントの最小値 (index部分で調整可能、デフォルトは1)
-#155-170行目の、tsvファイルを読み込む部分で、分析対象元素(Elemnt)と吸収端(基本的にK)がペアとなっている行番号 (入力する値は、行番号-1)
-
 from larch import Interpreter
 session = Interpreter()
 import larch
@@ -28,29 +22,69 @@ import time
 
 start_time = time.time()
 
-# Aフォルダ内の.txtファイルに対して処理を行う
-folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice' #規格化前の生データが入っているフォルダをパス表示で入力してください。
-output_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice2'  # 規格化後の生データを収集できるフォルダをパス表示で入力してください。
+##########################################################
+#以下、ユーザーが各自でパラメーターを設定する部分です。
+##########################################################
+#1.各データのtsvファイルで、分析対象元素(element)と予想されている物質名(substance)が記載されている部分をご確認ください。
+#folder_path1と、for文内のiの数値を、ユーザー各自で変更してください。
+#変更部分は、コメントで示しています。
 
-# Aフォルダ内の.txtファイルに対して処理を行う
-for filename in os.listdir(folder_path):
+#下のfolder_path1に、tsvファイルが入っているフォルダーパスを入力してください。
+folder_path1 = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_tsv/Group1'
+file_list1 = [os.path.join(folder_path1, f) for f in os.listdir(folder_path1) if f.endswith('.tsv')]
+slash_count1 = folder_path1.count('/')
+
+result_list = []
+for file_name in file_list1:
+    with open(file_name, 'r') as f:
+        file_name1 = file_name.split('/')[int(slash_count1) + 1]
+        file_name1 = file_name1.split('_')[0]
+        
+        element = None
+        substance = None
+        
+        with open(file_name, 'r') as tsvfile:
+            reader = csv.reader(tsvfile, delimiter='\t')
+            for i, row in enumerate(reader):
+                if i == 29: #ここの数値は、分析対象元素が記載されている行番号 − 1
+                    cell_value = row[1]
+                    parts = cell_value.split(' ')
+                    element = parts[0]
+                    
+                if i == 25: #ここの数値は、予想されている物質名が記載されている行番号 − 1
+                    substance = row[1]
+                    
+            result_list.append([file_name1, element, substance])
+
+result_df1 = pd.DataFrame(result_list, columns=['Data_Number', 'Element', 'Substance'])
+result_df1 = result_df1.sort_values('Data_Number')
+
+###############################################################
+#2.各データのtxtファイル(生データ)が入っているフォルダをinput_folderに、
+#規格化処理を行った後のデータを入れるフォルダをoutput_folderとします。
+#それぞれのフォルダーパスを、入力してください。
+#output_folderは、スペクトルで確認したいときに利用できます。
+
+input_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice'
+output_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice2'
+
+###############################################################
+
+for filename in os.listdir(input_folder):
     if filename.endswith('.txt'):
-        file_path = os.path.join(folder_path, filename)
+        file_path = os.path.join(input_folder, filename)
         output_path = os.path.join(output_folder, f'{os.path.splitext(filename)[0]}_flattened.txt')
 
-        # データの読み込みと規格化
         dat = io.read_ascii(file_path, labels="energy mu")
         pre_edge(dat, _larch=session)
 
-        # データの結合
         combined_list = list(zip(dat.energy, dat.flat))
 
-        # テキストファイルにデータを書き込む
         with open(output_path, 'w') as file:
             for item in combined_list:
                 file.write(f'{item[0]}\t{item[1]}\n')
 
-#規格化後のデータに対して、スペクトルを作成していきます。
+
 folder_path = output_folder
 file_list = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.txt')]
 
@@ -78,27 +112,33 @@ for file_name in file_list:
     #XANES Peak
     ######################################################################
     
-    # データ点の座標を表すndarray
     x = data.energy
     y = data.mu
     df = pd.DataFrame({'energy': x, 'mu': y})
     
-    #あえて、小数第1位に平滑化することで簡易化している。
+###############################################################
+#3.XANES吸収端ピークの最小点とするデータポイントを、各自で設定することができます。
+#最小点は、連続する3つのデータポイントの平均値が初めて0.05を超える点としています。
+#通常は、index >=1 ←最初の連続する3つのデータポイントの平均値が0.05以上　でもよいとしていますが、
+#吸収端前のpre edge領域にノイズがある場合、ピークの検出を誤る場合があります。
+#よって、index >= 15や20と設定してもよいでしょう。
+#ただし、pre edge領域のデータポイントが、indexの数よりも大きくなるように設定してください。
+
+    #極小点の抽出
     df["mu_3"]=df["mu"].rolling(3).mean().round(1)
-    threshold = 0.1  # 閾値
-    min_energy_point = pd.DataFrame(columns=df.columns)  # 空のDataFrameを作成
+    threshold = 0.1
+    min_energy_point = pd.DataFrame(columns=df.columns)
     for index, row in df.iterrows():
-        if index >= 1 and row['mu_3'] >= threshold: #index >= 内の数値は、各自で設定してください。吸収端前のノイズを除去することができます。
+        if index >= 1 and row['mu_3'] >= threshold: #indexは各自で変更することができます。デフォルトは1。
             min_energy_point = df[index:].nsmallest(1, 'energy')
             break
-    
+
+###############################################################
+
     # 極大点の抽出
     max_points = df[(df['mu'].shift(1) < df['mu']) & (df['mu'].shift(-1) < df['mu'])]
-    # 上に凸となる極大点を取得
     max_energy_points = max_points[(max_points['mu'].shift(1) < max_points['mu']) & (max_points['mu'].shift(-1) < max_points['mu'])]
-    # 上に凸となる極大値のうち、吸収端よりも右側で最もエネルギーが小さいもの = 吸収端ピークの極大値
     max_energy_point = max_energy_points[max_energy_points['mu'] >= data.mu[data.energy == data.e0][0]].nsmallest(1, 'energy')
-    # もしmax_energy_pointが検出されなかった場合、max_pointsで最も大きい値をmax_energy_pointとする
     if max_energy_point.empty:
         max_energy_point = max_points.nlargest(1, 'mu')
    
@@ -109,31 +149,25 @@ for file_name in file_list:
     ######################################################################
     #EXAFS Peak
     ######################################################################
-    #EXAFS振動の中心線を引く
     larch.xafs.autobk(data, _larch=session)
     
     #フーリエ変換
     larch.xafs.xftf(data, kweight=3, kmin=2, kmax=16, dk=0.7, window="hanning", _larch=session)
     x = data.r
     y = data.chir_mag
-    # 範囲の条件を作成します
+    
     condition = (1 <= x) & (x <= 6)
-    # 範囲内のデータを取得します
     x_range = x[condition]
     y_range = y[condition]
     
-    # ピークを見つけます
     peaks, _ = find_peaks(y_range)
     
-    # ピークの数と位置の表示
     peak_xpositions = [x_range[i] for i in peaks]
     peak_ypositions = [y_range[i] for i in peaks]
 
-    # 最大のpeak_ypositionsに対応するx_rangeの値を取得します
     max_peak_index = np.argmax(peak_ypositions)
     max_peak_xposition = peak_xpositions[max_peak_index]
     
-    # ピークの位置をグラフにプロット
     smallpeak_list.append([file_name1, file_name2, max(peak_ypositions), max_peak_xposition])
 
 df = pd.DataFrame(peak_list, columns=['Data_Number', 'Block', 'Peak_E0_μt', 'Peak_Max_μt', 'Peak_Width'])
@@ -144,37 +178,6 @@ df3 = df3.sort_values(['Data_Number', 'Block'])
 
 df4 = pd.merge(df, df3, on=["Data_Number", "Block"], how="inner")
 
-#######################################################
-#Detail of Data
-#######################################################
-
-folder_path1 = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_tsv/Group1'
-file_list1 = [os.path.join(folder_path1, f) for f in os.listdir(folder_path1) if f.endswith('.tsv')]
-slash_count1 = folder_path1.count('/')
-
-################################################################
-#以下のfor文はtsvファイルの'Element'が位置する行によって、各自で適宜調整してください。
-################################################################
-result_list = []
-for file_name in file_list1:
-    with open(file_name, 'r') as f:
-        file_name1 = file_name.split('/')[int(slash_count1)+1]
-        file_name1 = file_name1.split('_')[0]
-        # .tsvファイルを読み込みます
-        with open(file_name, 'r') as tsvfile:
-            reader = csv.reader(tsvfile, delimiter='\t')
-            for i, row in enumerate(reader):
-                if i == 29 :  #i ==の数値部分は、ユーザーが各自で設定してください。
-                    cell_value = row[1]
-                    parts = cell_value.split(' ')
-                    element = parts[0] #基本的にこの部分は0でよいです。
-                    
-                    # 結果をリストに追加します
-                    result_list.append([file_name1, element])
-
-# 結果をDataFrameに変換します
-result_df1 = pd.DataFrame(result_list, columns=['Data_Number', 'Element'])
-result_df1 = result_df1.sort_values('Data_Number')
 df6 = pd.merge(result_df1, df4, on=["Data_Number"], how="inner")
 
 df12 = pd.read_csv('periodictable.csv')
@@ -187,9 +190,10 @@ df14_reset = df14.reset_index(drop=True)
 df14 = df14_reset
 
 ##############################################################################
-#価数判定008
+#価数判定008 (0, 1-3, 4-6)の判定
 ##############################################################################
 df008 = pd.read_csv('TrainData_for_Oxide&Valence_008.csv')
+
 #########Oxide#################
 target_A_8 = df008.iloc[:, 1]
 targets_A_8 = np.array(target_A_8)
@@ -205,11 +209,9 @@ result_8 = model_8.predict(pred_data_8)
 predictionlist_8.extend(result_8)
 df_result_8 = pd.DataFrame(predictionlist_8, columns=['Predict_Oxide'])
 results_8 = pd.concat([pred_8, df_result_8], axis=1)
-# Corrected code
 results_8['Oxide'] = result_8
 results_8 = pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -1], results_8.iloc[:, 1:-1]], axis=1)
 
-#########################################
 ###########Valence##########################
 target_B_8 = df008.iloc[:, 2]
 targets_B_8 = np.array(target_B_8)
@@ -238,14 +240,14 @@ df_result2_8['Predict_Valence(0, 1-3, 4-6)'] = df_result2_8['Predict_Valence(0, 
 results_8 = pd.concat([pred_8, df_result_8, df_result2_8], axis=1)
 results_8.to_csv('PredictData_for_Oxide&Valence_008.csv', index=False)
 
-#print('Oxide & Valence0, 1-3, 4-6')
-#display(pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -2:]], axis=1))
+#display(pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -2:]], axis=1)) #このコメントは外さないでください。
 df008 = pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -2:]], axis=1)
 
 ##############################################################################
-#価数判定006
+#価数判定006 (0, 1, 2, 3, 4, 5, 6)
 ##############################################################################
 df006 = pd.read_csv('TrainData_for_Oxide&Valence_006.csv')
+
 #########Oxide#################
 target_A_6 = df006.iloc[:, 1]
 targets_A_6 = np.array(target_A_6)
@@ -265,7 +267,6 @@ results_6 = pd.concat([pred_6, df_result_6], axis=1)
 results_6['Oxide'] = result_6
 results_6 = pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -1], results_6.iloc[:, 1:-1]], axis=1)
 
-#########################################
 ###########Valence##########################
 target_B_6 = df006.iloc[:, 2]
 targets_B_6 = np.array(target_B_6)
@@ -289,8 +290,7 @@ df_result2_6 = pd.DataFrame(predictionlist_A_6, columns=['Predict_Valence(0, 1, 
 results_6 = pd.concat([pred_6, df_result_6, df_result2_6], axis=1)
 results_6.to_csv('PredictData_for_Oxide&Valence_006.csv', index=False)
 
-#print('Oxide & Valence0, 1, 2, 3, 4, 5, 6')
-#display(pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -2:]], axis=1))
+#display(pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -2:]], axis=1)) #このコメントは外さないでください。
 df006 = pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -2:]], axis=1)
 
 df_all = pd.concat([df008, df006.iloc[:, -1]], axis=1)
@@ -298,8 +298,8 @@ df_all2 = pd.merge(result_df1, df_all, on=["Data_Number"], how="inner")
 display(df_all2)
 df_all2.to_csv('PredictData_for_Oxide&Valence_all.csv', index=False)
 
-end_time = time.time()
-
 # Calculate the total execution time
+#計算にかかった時間も表示できます。
+end_time = time.time()
 execution_time = end_time - start_time
 print("Total execution time:", execution_time, "seconds")
