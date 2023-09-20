@@ -40,7 +40,6 @@ for i, (zip_patha, _) in enumerate(zip_paths_sorted):
     new_name = os.path.join(A_folder_path, str(i) + '.zip')
     os.rename(zip_path, new_name)
 ```
-------------------------------------------------------------------------------
 改めて以下のコードを入力して下さい
 ```
 import os
