@@ -28,6 +28,8 @@ start_time = time.time()
 #1.各データのtsvファイルで、分析対象元素(element)と予想されている物質名(substance)が記載されている部分をご確認ください。
 #folder_path1と、for文内のiの数値を、ユーザー各自で変更してください。
 #変更部分は、コメントで示しています。
+#tsvファイル名の先頭がデータ識別番号(数字)になっていることを確認してください。
+#例 : 0073_A.tsv
 
 #下のfolder_path1に、tsvファイルが入っているフォルダーパスを入力してください。
 folder_path1 = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_tsv/Group1'
@@ -64,6 +66,8 @@ result_df1 = result_df1.sort_values('Data_Number')
 #規格化処理を行った後のデータを入れるフォルダをoutput_folderとします。
 #それぞれのフォルダーパスを、入力してください。
 #output_folderは、スペクトルで確認したいときに利用できます。
+#txtファイル名の先頭がデータ識別番号(数字)になっていることを確認してください。
+#例 : 0073_A.txt
 
 input_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice'
 output_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice2'
