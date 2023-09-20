@@ -22,7 +22,9 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 2-1. 「1.1.1. Windows Notes」の GetLarch.bat scriptをクリックし、ダウンロードする。
 
 2-2. コマンドプロンプトを開き、以下のコマンドを入力する。
+     
      cd C:\Users\<YOURNAME>\Downloads
+     
      GetLarch
 
 ------------------------------------------------------------------------------
@@ -57,12 +59,16 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
  →管理者パスワードの入力を求められたら、もう一度戻って「自分のみにインストール」を選択。
 
 ※うまくダウンロード・インストールできなかった場合は、次の操作を行ってください。
+
 2-1. GetLarch.sh scriptをダウンロードする。
-　　　ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
+　　　
+     ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
 
 2-2. ターミナルを開き、以下のコマンドを入力する。
-　　　cd Downloads
-　　　sh GetLarch.sh
+　　　
+     cd Downloads
+　　　
+     sh GetLarch.sh
    
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
