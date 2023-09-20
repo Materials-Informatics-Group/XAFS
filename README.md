@@ -90,7 +90,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
   
   ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
 
-3. ターミナルを開き、以下のコマンドを入力する。
+3.ターミナルを開き、以下のコマンドを入力する。
 ``` 
    cd Downloads
    sh GetLarch.sh
