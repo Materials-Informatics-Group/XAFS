@@ -9,6 +9,7 @@ An easy way for anyone to perform XAFS analysis (oxide and valence determination
 https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧ください。
 
 ======================(Windowsの場合)======================
+
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
 
 2.「1.1. Installing from a Binary installers」を見て、「Larch for Windows」をクリックし、Larch Binary Installersをダウンロードする。
@@ -18,6 +19,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 　この時点で、あなたの端末にLarchのパッケージが自動的にインストールできています。
 
 ------------------------------------------------------------------------------
+
 ※うまくダウンロード・インストールできなかった場合は、次の操作を行ってください。
 2-1. 「1.1.1. Windows Notes」の GetLarch.bat scriptをクリックし、ダウンロードする。
 2-2. コマンドプロンプトを開き、以下のコマンドを入力する。
