@@ -1,7 +1,5 @@
 # 自身のPCにLarchをインストールする方法！
 
-### 詳しくは、XAFS_for_Everyoneをご覧ください。
-
 (Larch環境を構築していない場合)
 https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧ください。
 
