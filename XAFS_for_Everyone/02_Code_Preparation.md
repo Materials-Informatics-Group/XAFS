@@ -66,11 +66,13 @@ for folder_path in folder_paths:
 
 なお、このコードを実施後、**zipファイルは解凍し、フォルダの状態にする**ことをオススメします。
 
+Part2-2では、フォルダ状態でないと利用できません。
+
 ----------------------------------
 
 ## Part2-2 <特定の拡張子を含むファイルのみ、別フォルダへコピー>
 
-例えば、001.zip (001_A.txt, 001_A.tsv) や 002.zip (002_B.txt, 002_B.tsv)から、tsvファイルは**tsvフォルダ**に、txtファイルは**txtフォルダ**にそれぞれ種類ごとに分けることを想定します。
+例えば、001フォルダ (内容物：001_A.txt, 001_A.tsv) や 002フォルダ (内容物：002_B.txt, 002_B.tsv)から、tsvファイルは**tsvフォルダ**に、txtファイルは**txtフォルダ**にそれぞれ種類ごとに分けることを想定します。
 
 ```
 import os
@@ -88,19 +90,20 @@ B_folder_path = '/home/miyasaka/M1研究/Group/GroupK1'
 if not os.path.exists(B_folder_path):
     os.mkdir(B_folder_path)
 
-# A_folder_pathの各フォルダから".dat"を拡張子として含むファイルをコピー
+# A_folder_pathの各フォルダから".txt"を拡張子として含むファイルをコピー
 for folder_name in os.listdir(A_folder_path):
     folder_path = os.path.join(A_folder_path, folder_name)
     if os.path.isdir(folder_path):
         for file_name in os.listdir(folder_path):
             file_path = os.path.join(folder_path, file_name)
-            if os.path.isfile(file_path) and file_name.endswith('.dat'):
+            if os.path.isfile(file_path) and file_name.endswith('.txt'): #tsvファイルの場合は、.tsvと変更してください。
                 shutil.copy2(file_path, B_folder_path)
 
 # コピーしたファイルの数を表示
 print(f"Copied {len(os.listdir(B_folder_path))} files to {B_folder_path}")
 
 ```
+このコードを実行することで、txtファイルのみが含まれているフォルダ、tsvファイルのみが含まれているフォルダを作ることができます。
 
 -----------------------------------
 
