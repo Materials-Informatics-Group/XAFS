@@ -87,11 +87,14 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 ## Linuxの場合
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
 
-2. GetLarch.sh scriptをダウンロードする。
-   ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
+2.GetLarch.sh scriptをダウンロードする。
+  
+  ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
 
-3. ターミナルを開き、以下のコマンドを入力する。
+3.ターミナルを開き、以下のコマンドを入力する。
+
    cd Downloads
+
    sh GetLarch.sh
 
 4.ターミナルを開き、conda activate と入力する。(base)と表示されたら正しい。
