@@ -12,7 +12,7 @@
 > [!NOTE]
 > ※吸収係数については、規格化する前でも、規格化した後でもどちらでも構いません。
 > 
-> ※X線のエネルギーが「分光器の角度」、吸収係数が「入射光と透過光の各値(つまり、吸収係数計算前)」の場合(**9809フォーマット**)は、以下の**Part2-2**のコードを利用し、それぞれX線のエネルギーと吸収係数を算出してください。
+> ※X線のエネルギーが「分光器の角度」、吸収係数が「入射光と透過光の各値(つまり、吸収係数計算前)」の場合(**9809フォーマット**)は、以下の**Part2-3**のコードを利用し、それぞれX線のエネルギーと吸収係数を算出してください。
 
 ・**分析に関する詳細情報を含んだ、tsvファイル** (少なくとも、「分析対象元素と吸収端名のペア」と「予想物質名」が含まれていること)
 > [!NOTE]
@@ -64,9 +64,47 @@ for folder_path in folder_paths:
 
 具体的には、もとのファイル名の先頭にデータ識別番号が付け加わります。
 
+なお、このコードを実施後、**zipファイルは解凍し、フォルダの状態にする**ことをオススメします。
+
+----------------------------------
+
+## Part2-2 <特定の拡張子を含むファイルのみ、別フォルダへコピー>
+
+例えば、001.zip (001_A.txt, 001_A.tsv) や 002.zip (002_B.txt, 002_B.tsv)から、tsvファイルは**tsvフォルダ**に、txtファイルは**txtフォルダ**にそれぞれ種類ごとに分けることを想定します。
+
+```
+import os
+import shutil
+
+# zipファイル (001.zip, 002.zip) が含まれているフォルダを指定します。
+# 利用者が''内を適宜変更してください。
+A_folder_path = '/home/miyasaka/M1研究/Group/GroupK(dat_ex3_txt_20210724-21_Spring_0658-2239)'
+
+# 移動先のフォルダのパスを記入してください。
+# 利用者が''内を適宜変更してください。
+B_folder_path = '/home/miyasaka/M1研究/Group/GroupK1'
+
+# (オプション)B_folder_pathが存在しない場合、自動的にフォルダを作成してくれます。
+if not os.path.exists(B_folder_path):
+    os.mkdir(B_folder_path)
+
+# A_folder_pathの各フォルダから".dat"を拡張子として含むファイルをコピー
+for folder_name in os.listdir(A_folder_path):
+    folder_path = os.path.join(A_folder_path, folder_name)
+    if os.path.isdir(folder_path):
+        for file_name in os.listdir(folder_path):
+            file_path = os.path.join(folder_path, file_name)
+            if os.path.isfile(file_path) and file_name.endswith('.dat'):
+                shutil.copy2(file_path, B_folder_path)
+
+# コピーしたファイルの数を表示
+print(f"Copied {len(os.listdir(B_folder_path))} files to {B_folder_path}")
+
+```
+
 -----------------------------------
 
-## Part2-2 <9809フォーマットで、生データからX線のエネルギーと吸収係数を算出するコード>
+## Part2-3 <9809フォーマットで、生データからX線のエネルギーと吸収係数を算出するコード>
 
 9809フォーマットの場合は、以下のコードを実施し、**X線のエネルギー**と**吸収係数**を求めてください。
 
