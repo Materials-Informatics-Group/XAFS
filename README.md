@@ -9,7 +9,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 ## Windowsの場合
 
-1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
+1.https://xraypy.github.io/xraylarch/installation.html#install-lin を開く。
 
 2.「1.1. Installing from a Binary installers」を見て、「Larch for Windows」をクリックし、Larch Binary Installersをダウンロードする。その後、Larchを各自でインストールする。
    C:∕Users∕YourName∕AppData∕Local∕xraylarchにインストールされています。
@@ -42,7 +42,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
 
 ## Macの場合
-1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
+1.https://xraypy.github.io/xraylarch/installation.html#install-lin を開く。
 
 2.「1.1. Installing from a Binary installers」を見て、「Larch for MacOSX」をクリックし、Larch Binary Installersをダウンロードする。
 　　その後、Larchを各自でインストールする。
@@ -85,7 +85,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
 
 ## Linuxの場合
-1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
+1.https://xraypy.github.io/xraylarch/installation.html#install-lin を開く。
 
 2.GetLarch.sh scriptをダウンロードする。
   
