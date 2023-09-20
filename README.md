@@ -71,9 +71,7 @@ from larch import Interpreter
 > [!NOTE]
 > うまくダウンロード・インストールできなかった場合は、次の操作を行ってください。
 
-2-1. GetLarch.sh scriptをダウンロードする。
-　　　
-ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
+2-1. GetLarch.sh scriptをダウンロードする。ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
 
 2-2. ターミナルを開き、以下のコマンドを入力する。
 ```
