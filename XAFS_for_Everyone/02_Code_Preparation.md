@@ -27,15 +27,14 @@
 import os
 
 # 番号をつけたいzipファイルが含まれているフォルダのパスを指定
+# 利用者は、A_folder_pathの''内を適宜変更してください。
 A_folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/01.RawData_Package/D.Group4(dat_ex3_txt_20210724-21_Spring_0658-2239)'
 
-# 指定したフォルダ内のzipファイルのパスとModificate_Dateを取得
 zip_paths = [(os.path.join(A_folder_path, file), os.path.getmtime(os.path.join(A_folder_path, file))) for file in os.listdir(A_folder_path) if file.endswith('.zip')]
 
 # Modificate_Dateでソート (各zipファイルが指定フォルダに追加された順に識別番号を付与)
 zip_paths_sorted = sorted(zip_paths, key=lambda x: x[1])
 
-# zipファイル名を変更
 for i, (zip_patha, _) in enumerate(zip_paths_sorted):
     new_name = os.path.join(A_folder_path, str(i) + '.zip')
     os.rename(zip_path, new_name)
@@ -48,10 +47,10 @@ for i, (zip_patha, _) in enumerate(zip_paths_sorted):
 ```
 import os
 
-# Aフォルダのパスを指定
+# 名前変更後のzipファイルが含まれているフォルダのパスを指定
+# 利用者は、A_folder_pathの''内を適宜変更してください。
 A_folder_path = '/home/miyasaka/M1_Research/F11.Code_Summary/01.RawData_Package/A.Group1(ex3_txt_20220620_Hokkaido_0209-0313)'
 
-# Aフォルダ内のフォルダのパスを取得
 folder_paths = [os.path.join(A_folder_path, folder) for folder in os.listdir(A_folder_path) if os.path.isdir(os.path.join(A_folder_path, folder)) and folder.isdigit()]
 
 # 各フォルダ内の.txt, .tsvファイルの名前を変更
@@ -63,6 +62,11 @@ for folder_path in folder_paths:
             new_path = os.path.join(folder_path, folder_path.split('/')[-1] + '_' + file)
             os.rename(old_path, new_path)
 ```
+このコードにより、各フォルダ内の.txt, .tsvファイルの名前を変更できます。
+
+具体的には、もとのファイル名の先頭にデータ識別番号が付け加わります。
+
+-----------------------------------
 
 ## Part2-2
 #9809フォーマットの場合は、以下のコードを実施し、X線のエネルギーと吸収係数を求めてください。
