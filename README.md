@@ -6,7 +6,7 @@
 (Larch環境を構築していない場合)
 https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧ください。
 
-##(Windowsの場合)
+## (Windowsの場合)
 
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
 
