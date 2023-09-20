@@ -114,7 +114,7 @@ import numpy as np
 import math
 
 #Middle_folderには、抽出後のデータが含まれているフォルダのパスを記入してください。(上のC_folderと同じパス)
-#After_folderには、#計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)のパスを記入してください。
+#After_folderには、計算後のデータが含まれているフォルダ(いわゆる、従来の規格化前のデータ)のパスを記入してください。
 #つまり、2つのフォルダを作成しておく必要があります。
 
 Middle_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2_111' #利用者が適宜変更
@@ -140,3 +140,4 @@ for file_name in file_list:
     data = np.array(data)
     
     np.savetxt(output_file_path, data, fmt='%.6f')
+```
