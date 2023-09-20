@@ -41,6 +41,16 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
 
+以下、コマンド集です。
+```
+conda activate
+conda update -y conda python pip
+conda install -yc conda-forge xraylarch
+larch -m
+pip install notebook
+from larch import Interpreter
+```
+
 ## Macの場合
 1.https://xraypy.github.io/xraylarch/installation.html#install-lin を開く。
 
@@ -82,6 +92,16 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 7.pip install notebook と入力し、仮想環境とJupyter notebookの環境を同期させる。
 
 8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
+
+以下、コマンド集です。
+```
+conda activate
+conda update -y conda python pip
+conda install -yc conda-forge xraylarch
+larch -m
+pip install notebook
+from larch import Interpreter
+```
 
 ## Linuxの場合
 1.https://xraypy.github.io/xraylarch/installation.html#install-lin を開く。
