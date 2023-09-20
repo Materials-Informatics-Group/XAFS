@@ -11,8 +11,7 @@ https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧くだ
 
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
 
-2.「1.1. Installing from a Binary installers」を見て、「Larch for Windows」をクリックし、Larch Binary Installersをダウンロードする。
-　　その後、Larchを各自でインストールする。
+2.「1.1. Installing from a Binary installers」を見て、「Larch for Windows」をクリックし、Larch Binary Installersをダウンロードする。その後、Larchを各自でインストールする。
    C:∕Users∕YourName∕AppData∕Local∕xraylarchにインストールされています。
 
 　この時点で、あなたの端末にLarchのパッケージが自動的にインストールできています。
