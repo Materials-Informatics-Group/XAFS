@@ -75,8 +75,11 @@ for folder_path in folder_paths:
 import os
 import numpy as np
 
-A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1' #抽出前のデータ(生データ)が含まれているフォルダ
-C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2' #抽出後のデータが含まれているフォルダ
+#A_folderには抽出前のデータ(生データ)が含まれているフォルダの、C_folderには抽出後のデータが含まれているフォルダのパスを記入してください。
+#つまり、2つのフォルダを作成しておく必要があります。
+
+A_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part1'
+C_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_txt_Part2'
 
 file_list = [f for f in os.listdir(A_folder) if f.endswith('.txt')]
 
