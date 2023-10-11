@@ -123,20 +123,22 @@ for file_name in file_list:
 ###############################################################
 #3.XANES吸収端ピークの最小点とするデータポイントを、各自で設定することができます。
 #最小点は、連続する3つのデータポイントの平均値が初めて0.05を超える点としています。
-#通常は、index >=1 ←最初の連続する3つのデータポイントの平均値が0.05以上　でもよいとしていますが、
+#通常は、min_data_option >=1 ←最初の連続する3つのデータポイントの平均値が0.05以上　でもよいとしていますが、
 #吸収端前のpre edge領域にノイズがある場合、ピークの検出を誤る場合があります。
-#よって、index >= 15や20と設定してもよいでしょう。
-#ただし、pre edge領域のデータポイントが、indexの数よりも大きくなるように設定してください。
-
+#よって、min_data_option >= 15や20と設定してもよいでしょう。
+#ただし、pre edge領域のデータポイント数が、min_data_optionの値よりも大きくなるように設定してください。
+    
     #極小点の抽出
     df["mu_3"]=df["mu"].rolling(3).mean().round(1)
     threshold = 0.1
     min_energy_point = pd.DataFrame(columns=df.columns)
+    
+    min_data_option = 20 #ここの値を変更してください
+
     for index, row in df.iterrows():
-        if index >= 1 and row['mu_3'] >= threshold: #indexは各自で変更することができます。デフォルトは1。
+        if index >= min_data_option and row['mu_3'] >= threshold:
             min_energy_point = df[index:].nsmallest(1, 'energy')
             break
-
 ###############################################################
 
     # 極大点の抽出
