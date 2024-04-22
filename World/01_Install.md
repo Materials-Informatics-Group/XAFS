@@ -2,6 +2,7 @@
 
 If you haven't set up the Larch environment, please check **https://xraypy.github.io/xraylarch/installation.html**
 
+# Windows
 ======================(Windowsの場合)======================
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
 
