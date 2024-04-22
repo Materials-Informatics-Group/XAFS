@@ -1,91 +1,107 @@
-## An easy way for anyone to perform XAFS analysis (oxide and valence determination)!
+# Install for Larch
+ 
+An easy way for anyone to perform XAFS analysis!! <br>(oxide and valence determination)
 
 If you haven't set up the Larch environment, please check **https://xraypy.github.io/xraylarch/installation.html**
 
-# Windows
-======================(Windowsの場合)======================
-1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
+## Windows
 
-2.「1.1. Installing from a Binary installers」を見て、「Larch for Windows」をクリックし、Larch Binary Installersをダウンロードする。
-　　その後、Larchを各自でインストールする。
-   C:∕Users∕YourName∕AppData∕Local∕xraylarchにインストールされています。
+1. Open https://xraypy.github.io/xraylarch/installation.html
 
-　この時点で、あなたの端末にLarchのパッケージが自動的にインストールできています。
+2. Refer to **1.1. Installing from a Binary installers**, click on **Larch for Windows**, and download the Larch Binary Installers. 
+<br>Then, install Larch individually.
+<br>It will be installed in **C:/Users/YourName/AppData/Local/xraylarch**.
 
-------------------------------------------------------------------------------
-※うまくダウンロード・インストールできなかった場合は、次の操作を行ってください。
-2-1. 「1.1.1. Windows Notes」の GetLarch.bat scriptをクリックし、ダウンロードする。
-2-2. コマンドプロンプトを開き、以下のコマンドを入力する。
-     cd C:\Users\<YOURNAME>\Downloads
-     GetLarch
-------------------------------------------------------------------------------
+At this point, the Larch package should be automatically installed on your terminal.
 
-3.コマンドプロンプトを開き、conda activate と入力する。(base)と表示されたら正しい。
+> [!NOTE]
+>If the download and installation were unsuccessful, please follow these steps:
+>
+>2-1. Click on the **GetLarch.bat script** under 1.1.1. Windows Notes and download it.
+>
+>2-2. Open Command Prompt and enter the following commands:
+>```
+>cd C:\Users\<YOURNAME>\Downloads
+>GetLarch
+>```
 
-4.conda update -y conda python pip と入力する。処理が終わるまで待つ。(全てのパッケージが最新バージョンになります)
+3. Open Command Prompt and type ```conda activate```. If **(base)** is displayed, it's correct.
 
-5.conda install -yc conda-forge xraylarchと入力する。
+4. Type ```conda update -y conda python pip```.
+<br>Wait until the process finishes (All packages will be updated to the latest versions).
 
-6.正しく環境構築されたか、larch -m で確認する。
+5. Type ```conda install -yc conda-forge xraylarch```.
 
-7.pip install notebook と入力し、仮想環境とJupyter notebookの環境を同期させる。
+6. Check if the environment is set up correctly by typing ```larch -m```.
 
-8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
+7. Type ```pip install notebook``` to synchronize the virtual environment with the Jupyter notebook environment.
 
-======================(Macの場合)======================
-1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
+8. Enter ```from larch import Interpreter``` into Jupyter Notebook to verify if it can be imported correctly.
 
-2.「1.1. Installing from a Binary installers」を見て、「Larch for MacOSX」をクリックし、Larch Binary Installersをダウンロードする。
-　　その後、Larchを各自でインストールする。
+## Mac
+1. Open https://xraypy.github.io/xraylarch/installation.html
 
-------------------------------------------------------------------------------------------------------------------------------------------------
-※以下のエラーが発生した場合は、対処法がありますので、操作してください。
-・MacOS 10.15（Catalina）の場合、Appleは署名されていないサードパーティパッケージを、デフォルトではインストールしません。
-　→システム環境設定の「セキュリティとプライバシー」の「一般設定」で、このパッケージのインストールの許可をする(管理者パスワードの入力が必要)。
+2. Refer to **1.1. Installing from a Binary installers**, click on **Larch for MacOSX**, and download the Larch Binary Installers. 
+<br>Then, install Larch individually.
 
-・インストール中に「自分のみにインストールする」をクリックする必要がある。
-　→管理者パスワードの入力を求められたら、もう一度戻って「自分のみにインストール」を選択。
+> [!NOTE]
+>If the following errors occur, please follow the instructions:
+>
+>*MacOS will not install non-signed 3rd party packages by default.*
+><br>→ Allow the installation of this package in the "General" settings of "Security & Privacy" in System Preferences
+><br> (administrator password required).
+>
+>*During installation, you may need to click "Install only for me".*
+><br>→ If prompted for an administrator password, go back and select "Install only for me" again.
 
-※うまくダウンロード・インストールできなかった場合は、次の操作を行ってください。
-2-1. GetLarch.sh scriptをダウンロードする。
-　　　ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
+> [!NOTE]
+>If the download and installation were unsuccessful, please follow these steps:
+>
+>2-1. Download the **GetLarch.sh script**.
+> 
+>If you are unable to download, copy & paste the script from the GetLarch.sh script into Notepad, and create a file named GetLarch.sh in your Downloads folder.
+>
+>2-2. Open Terminal and enter the following commands:
+>```
+>cd Downloads
+>sh GetLarch.sh
+>```
 
-2-2. ターミナルを開き、以下のコマンドを入力する。
-　　　cd Downloads
-　　　sh GetLarch.sh
-------------------------------------------------------------------------------------------------------------------------------------------------
+3. Open Command Prompt and type ```conda activate```. If **(base)** is displayed, it's correct.
 
-3.ターミナルを開き、conda activate と入力する。(base)と表示されたら正しい。
+4. Type ```conda update -y conda python pip```.
+<br>Wait until the process finishes (All packages will be updated to the latest versions).
 
-4.conda update -y conda python pip と入力する。処理が終わるまで待つ。(全てのパッケージが最新バージョンになります)
+5. Type ```conda install -yc conda-forge xraylarch```.
 
-5.conda install -yc conda-forge xraylarchと入力する。
+6. Check if the environment is set up correctly by typing ```larch -m```.
 
-6.正しく環境構築されたか、larch -m で確認する。
+7. Type ```pip install notebook``` to synchronize the virtual environment with the Jupyter notebook environment.
 
-7.pip install notebook と入力し、仮想環境とJupyter notebookの環境を同期させる。
-
-8.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
+8. Enter ```from larch import Interpreter``` into Jupyter Notebook to verify if it can be imported correctly.
 
 
-======================(Linuxの場合)======================
-1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
+## Linux
+1. Open https://xraypy.github.io/xraylarch/installation.html
 
-2. GetLarch.sh scriptをダウンロードする。
-   ダウンロードできない場合は、GetLarch.sh script中のスクリプトをメモ帳にコピー&ペーストし、GetLarch.shという名前のファイル名をダウンロードフォルダ上に作成する。
+2. Download the **GetLarch.sh script**.
+<br>If you are unable to download, copy & paste the script from the GetLarch.sh script into Notepad, and create a file named GetLarch.sh in your Downloads folder.
 
-3. ターミナルを開き、以下のコマンドを入力する。
-   cd Downloads
-   sh GetLarch.sh
+3. Open Terminal and enter the following commands:
+```
+cd Downloads
+sh GetLarch.sh
+```
 
-4.ターミナルを開き、conda activate と入力する。(base)と表示されたら正しい。
+4. Open Command Prompt and type ```conda activate```. If **(base)** is displayed, it's correct.
 
-5.conda update -y conda python pip と入力する。処理が終わるまで待つ。(全てのパッケージが最新バージョンになります)
+5. Type ```conda update -y conda python pip```.
+<br>Wait until the process finishes (All packages will be updated to the latest versions).
 
-6.conda install -yc conda-forge xraylarchと入力する。
+6. Type ```conda install -yc conda-forge xraylarch```.
 
-7.正しく環境構築されたか、larch -m で確認する。
+7. Check if the environment is set up correctly by typing ```larch -m```.
 
-8.pip install notebook と入力し、仮想環境とJupyter notebookの環境を同期させる。
+8. Type ```pip install notebook``` to synchronize the virtual environment with the Jupyter notebook environment.
 
-9.from larch import Interpreter をJupyter Notebookに入力し、 正しくImportできるか確かめる。
+9. Enter ```from larch import Interpreter``` into Jupyter Notebook to verify if it can be imported correctly.
