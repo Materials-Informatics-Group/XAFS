@@ -1,7 +1,6 @@
 ## An easy way for anyone to perform XAFS analysis (oxide and valence determination)!
 
-(Larch環境を構築していない場合)
-https://xraypy.github.io/xraylarch/installation.html#install-lin をご覧ください。
+If you haven't set up the Larch environment, please check https://xraypy.github.io/xraylarch/installation.html
 
 ======================(Windowsの場合)======================
 1.https://xraypy.github.io/xraylarch/installation.html#install-linを開く。
