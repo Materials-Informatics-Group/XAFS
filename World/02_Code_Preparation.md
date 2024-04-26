@@ -24,6 +24,8 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 > The 9809 format is one of the measurement data formats output by the XAFS measurement program developed by Dr. Nomura, who oversees the XAFS beamlines at KEK PF, specifically for use on the XAFS beamlines at Photon Factory (Tsukuba, Japan).
 >
 > In 9809 format, the X-ray energy corresponds to **spectrometer angle**, <br>and the absorption coefficient corresponds to **the values of incident and transmitted light** (i.e., before calculating the absorption coefficient).
+>
+> Please refer to the following link for a detailed explanation of the 9809 format: <br>http://titan.nusr.nagoya-u.ac.jp/Tabuchi/BL5S1/doku.php/tabuchi/9809format
 
 
 
