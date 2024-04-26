@@ -5,6 +5,10 @@ To perform oxide and valence determination from raw data, the following files ar
 + Raw Data (.txt file)
 + Detailed information about XAS analysis (.tsv file)
 
+Please make sure to individually assign a data identification number at the beginning of the file name. 
+
+For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv**, and so on.
+
 ## Raw Data (.txt file)
 + The first column is **X-ray energy** (horizontal axis of the spectrum)
 + The second column is **Absorption coefficient** (vertical axis of the spectrum))
