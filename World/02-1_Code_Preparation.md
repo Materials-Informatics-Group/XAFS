@@ -12,10 +12,11 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 ## Raw Data (.txt file)
 + The first column is **X-ray energy** (horizontal axis of the spectrum)
 + The second column is **Absorption coefficient** (vertical axis of the spectrum))
-> [!NOTE]
-> The absorption coefficient can be either normalized or unnormalized.
 
 ![rawdata](/World/RawData_txtfile.png)
+
+> [!NOTE]
+> The absorption coefficient can be either normalized or unnormalized.
 
 >
 > [!NOTE]
