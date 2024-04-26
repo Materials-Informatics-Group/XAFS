@@ -2,6 +2,8 @@
  
 An easy way for anyone to perform XAFS analysis!! <br>(oxide and valence determination)
 
+If you intend to use this software, you will need to install **Larch**, an open-source library for XAFS analysis.
+
 If you haven't set up the Larch environment, please check **https://xraypy.github.io/xraylarch/installation.html**
 
 ## Windows
