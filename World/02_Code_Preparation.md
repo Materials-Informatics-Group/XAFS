@@ -33,4 +33,13 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 ![tsvdata](/World/Detailed_Information_tsvfile.png)
 
 > [!NOTE]
-> 
+> Above the case,
+> + pairs of elements being analyzed → Ni (line 25)
+> + absorption edge names → K-edge (line 25)
+> + expected material name → NiO (line 16)
+>
+> The contents of the tsv file likely vary depending on the measurement facility. 
+>
+> However, these essential pieces of information should be included.
+>
+> The numbering of the codes to be introduced in the next part should be changed based on the lines containing the three items of information.
