@@ -23,16 +23,16 @@ import time
 start_time = time.time()
 
 ##########################################################
-#以下、ユーザーが各自でパラメーターを設定する部分です。
+# The following three sections (#1-#3) are where users need to set parameters individually.
 ##########################################################
-#1.各データのtsvファイルで、分析対象元素(element)と予想されている物質名(substance)が記載されている部分をご確認ください。
-#folder_path1と、for文内のiの数値を、ユーザー各自で変更してください。
-#変更部分は、コメントで示しています。
-#tsvファイル名の先頭がデータ識別番号(数字)になっていることを確認してください。
-#例 : 0073_A.tsv
+#1. Please verify the sections in each tsv file where the elements to be analyzed (element) and the expected substance name (substance) are recorded.
+# Please change the folder_path1 and the value of i in the for loop according to your own data.
+# The parts to be changed are indicated in the comments(#).
+# Make sure that the tsv file names start with a data identification number (a number).
+# Example: 0073_A.tsv
 
-#下のfolder_path1に、tsvファイルが入っているフォルダーパスを入力してください。
-folder_path1 = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/GroupB_only_tsv/Group1'
+# Please enter the folder path where the tsv files are located into folder_path1.
+folder_path1 = '/home/yourname/XAFS/tsv_files'
 file_list1 = [os.path.join(folder_path1, f) for f in os.listdir(folder_path1) if f.endswith('.tsv')]
 slash_count1 = folder_path1.count('/')
 
@@ -48,12 +48,12 @@ for file_name in file_list1:
         with open(file_name, 'r') as tsvfile:
             reader = csv.reader(tsvfile, delimiter='\t')
             for i, row in enumerate(reader):
-                if i == 29: #ここの数値は、分析対象元素が記載されている行番号 − 1
+                if i == 29: #The number here corresponds to the line number where the elements to be analyzed are recorded minus 1.
                     cell_value = row[1]
                     parts = cell_value.split(' ')
                     element = parts[0]
                     
-                if i == 25: #ここの数値は、予想されている物質名が記載されている行番号 − 1
+                if i == 25: #The number here corresponds to the line number where the expected substance name are recorded minus 1.
                     substance = row[1]
                     
             result_list.append([file_name1, element, substance])
@@ -62,15 +62,15 @@ result_df1 = pd.DataFrame(result_list, columns=['Data_Number', 'Element', 'Subst
 result_df1 = result_df1.sort_values('Data_Number')
 
 ###############################################################
-#2.各データのtxtファイル(生データ)が入っているフォルダをinput_folderに、
-#規格化処理を行った後のデータを入れるフォルダをoutput_folderとします。
-#それぞれのフォルダーパスを、入力してください。
-#output_folderは、スペクトルで確認したいときに利用できます。
-#txtファイル名の先頭がデータ識別番号(数字)になっていることを確認してください。
-#例 : 0073_A.txt
+#2. Set input_folder to the folder containing the txt files (raw data) for each dataset,
+# and output_folder to the folder where the normalized data will be stored.
+# Please input the folder paths accordingly.
+# The output_folder can be used when inspecting the spectra.
+# Make sure that the txt file names start with a data identification number (a number).
+# Example: 0073_A.txt
 
-input_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice'
-output_folder = '/home/miyasaka/M1_Research/F11.Code_Summary/05.Raw_Data_for_Test/NIMS_Data(Photon_Factory)/Practice2'
+input_folder  = '/home/yourname/XAFS/Raw_Data'
+output_folder = '/home/yourname/XAFS/Normalized_Data'
 
 ###############################################################
 
@@ -121,19 +121,19 @@ for file_name in file_list:
     df = pd.DataFrame({'energy': x, 'mu': y})
     
 ###############################################################
-#3.XANES吸収端ピークの最小点とするデータポイントを、各自で設定することができます。
-#最小点は、連続する3つのデータポイントの平均値が初めて0.05を超える点としています。
-#通常は、min_data_option >=1 ←最初の連続する3つのデータポイントの平均値が0.05以上　でもよいとしていますが、
-#吸収端前のpre edge領域にノイズがある場合、ピークの検出を誤る場合があります。
-#よって、min_data_option >= 15や20と設定してもよいでしょう。
-#ただし、pre edge領域のデータポイント数が、min_data_optionの値よりも大きくなるように設定してください。
+#3. Users can set the data point to be the minimum point of the XANES absorption edge peak.
+# The minimum point is defined as the point where the average of three consecutive data points first exceeds 0.05.
+# Typically, min_data_option >= 1 is acceptable, indicating that the average of the first three consecutive data points exceeds 0.05.
+# However, if there is noise in the pre-edge region before the absorption edge, it may lead to incorrect peak detection.
+# Therefore, setting min_data_option >= 15 or 20 may also be appropriate.
+# However, ensure that the number of data points in the pre-edge region is greater than the value of min_data_option.
     
-    #極小点の抽出
+    # Extract the minimum point
     df["mu_3"]=df["mu"].rolling(3).mean().round(1)
     threshold = 0.1
     min_energy_point = pd.DataFrame(columns=df.columns)
     
-    min_data_option = 20 #ここの値を変更してください
+    min_data_option = 20 #Please change the value here.
 
     for index, row in df.iterrows():
         if index >= min_data_option and row['mu_3'] >= threshold:
@@ -141,7 +141,7 @@ for file_name in file_list:
             break
 ###############################################################
 
-    # 極大点の抽出
+    # Extract the maximum point
     max_points = df[(df['mu'].shift(1) < df['mu']) & (df['mu'].shift(-1) < df['mu'])]
     max_energy_points = max_points[(max_points['mu'].shift(1) < max_points['mu']) & (max_points['mu'].shift(-1) < max_points['mu'])]
     max_energy_point = max_energy_points[max_energy_points['mu'] >= data.mu[data.energy == data.e0][0]].nsmallest(1, 'energy')
@@ -157,7 +157,7 @@ for file_name in file_list:
     ######################################################################
     larch.xafs.autobk(data, _larch=session)
     
-    #フーリエ変換
+    # Fourier Transform
     larch.xafs.xftf(data, kweight=3, kmin=2, kmax=16, dk=0.7, window="hanning", _larch=session)
     x = data.r
     y = data.chir_mag
