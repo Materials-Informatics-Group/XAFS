@@ -26,5 +26,7 @@ To perform oxide and valence determination from raw data, the following files ar
 ## Detailed information about XAS analysis (.tsv file)
 + At least, ensure that it contains **pairs of elements being analyzed and absorption edge names** and **the expected material name**.
 
+![tsvdata](/World/Detailed_Information_tsvfile.png)
+
 > [!NOTE]
 > 
