@@ -196,7 +196,7 @@ df14_reset = df14.reset_index(drop=True)
 df14 = df14_reset
 
 ##############################################################################
-#価数判定008 (0, 1-3, 4-6)の判定
+# Valence Classification (0, 1-3, 4-6)
 ##############################################################################
 df008 = pd.read_csv('TrainData_for_Oxide&Valence_008.csv')
 
@@ -238,7 +238,7 @@ predictionlist_A_8.extend(result2_8)
 df_result2_8 = pd.DataFrame(predictionlist_A_8, columns=['Predict_Valence(0, 1-3, 4-6)'])
 
 #############################################################
-#ユーザーに分かりやすいような表示にするなら、以下のコードも実行すること！
+# If you want to represent valence states 1-3 as 3 and valence states 4-6 as 4 to make it more user-friendly, please apply the following code as well.
 replace_dict = {3: '1 - 3', 4: '4 - 6'}
 df_result2_8['Predict_Valence(0, 1-3, 4-6)'] = df_result2_8['Predict_Valence(0, 1-3, 4-6)'].replace(replace_dict)
 #############################################################
@@ -246,11 +246,11 @@ df_result2_8['Predict_Valence(0, 1-3, 4-6)'] = df_result2_8['Predict_Valence(0, 
 results_8 = pd.concat([pred_8, df_result_8, df_result2_8], axis=1)
 results_8.to_csv('PredictData_for_Oxide&Valence_008.csv', index=False)
 
-#display(pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -2:]], axis=1)) #このコメントは外さないでください。
+#display(pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -2:]], axis=1)) # Please do not remove this comment.
 df008 = pd.concat([results_8.iloc[:, 0], results_8.iloc[:, -2:]], axis=1)
 
 ##############################################################################
-#価数判定006 (0, 1, 2, 3, 4, 5, 6)
+# Valence Classification (0, 1, 2, 3, 4, 5, 6)
 ##############################################################################
 df006 = pd.read_csv('TrainData_for_Oxide&Valence_006.csv')
 
@@ -296,7 +296,7 @@ df_result2_6 = pd.DataFrame(predictionlist_A_6, columns=['Predict_Valence(0, 1, 
 results_6 = pd.concat([pred_6, df_result_6, df_result2_6], axis=1)
 results_6.to_csv('PredictData_for_Oxide&Valence_006.csv', index=False)
 
-#display(pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -2:]], axis=1)) #このコメントは外さないでください。
+#display(pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -2:]], axis=1)) # Please do not remove this comment.
 df006 = pd.concat([results_6.iloc[:, 0], results_6.iloc[:, -2:]], axis=1)
 
 df_all = pd.concat([df008, df006.iloc[:, -1]], axis=1)
@@ -305,7 +305,6 @@ display(df_all2)
 df_all2.to_csv('PredictData_for_Oxide&Valence_all.csv', index=False)
 
 # Calculate the total execution time
-#計算にかかった時間も表示できます。
 end_time = time.time()
 execution_time = end_time - start_time
 print("Total execution time:", execution_time, "seconds")
