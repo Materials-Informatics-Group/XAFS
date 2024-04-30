@@ -13,7 +13,7 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 + The first column is **X-ray energy** (horizontal axis of the spectrum)
 + The second column is **Absorption coefficient** (vertical axis of the spectrum))
 
-![rawdata](/World/RawData_txtfile.png)
+![rawdata](/World/figure/RawData_txtfile.png)
 
 > [!NOTE]
 > The absorption coefficient can be either normalized or unnormalized.
@@ -33,7 +33,7 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 ## Detailed information about XAS analysis (.tsv file)
 + At least, ensure that it contains **pairs of elements being analyzed and absorption edge names** and **the expected material name**.
 
-![tsvdata](/World/Detailed_Information_tsvfile.png)
+![tsvdata](/World/figure/Detailed_Information_tsvfile.png)
 
 > [!NOTE]
 > Above the case,
