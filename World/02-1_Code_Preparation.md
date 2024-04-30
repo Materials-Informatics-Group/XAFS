@@ -31,14 +31,13 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 
 
 ## Detailed information about XAS analysis (.tsv file)
-+ At least, ensure that it contains **pairs of elements being analyzed and absorption edge names** and **the expected material name**.
++ At least, ensure that it contains **pairs of elements being analyzed** and **the expected material name**.
 
 ![tsvdata](/World/figure/Detailed_Information_tsvfile.png)
 
 > [!NOTE]
 > Above the case,
 > + pairs of elements being analyzed → Ni (line 25)
-> + absorption edge names → K-edge (line 25)
 > + expected material name → NiO (line 16)
 >
 > The contents of the tsv file likely vary depending on the measurement facility. 
