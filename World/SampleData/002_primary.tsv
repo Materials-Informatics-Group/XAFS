@@ -1,0 +1,92 @@
+key	value
+@data_info@identifier@pid	KEKPF-BL9C_39215
+@data_info@identifier@proposal_number	2021Z000
+@data_info@date@create_time	2019-06-28 16:41:01
+@data_info@facility	Photon Factory
+@data_info@class_name	BL-9C
+@data_info@title	N/A
+@data_info@title_ja	N/A
+@data_info@license@name	CC BY-NC-SA
+@data_info@version@data_format	PF9809-MDR-20220401
+@data_info@data_origin	experiment
+@data_info@data_depositor@name	Photon Factory
+@data_info@data_depositor@affiliation@organization	KEK
+@data_info@data_depositor@affiliation@sub_organization	Institute of Materials Structure Science
+@data_info@contact_name@name	Photon Factory
+@data_info@contact_name@organization	KEK
+@data_info@contact_name@sub_organization	Institute of Materials Structure Science
+@data_info@contact_name@role	organization
+@facility@ring@energy	2.5
+@facility@ring@energy_unit	GeV
+@facility@ring@start_current	429.926
+@facility@ring@start_current_unit	mA
+@facility@ring@end_current	429.839
+@facility@ring@end_current_unit	mA
+@sample_0@name	Iron(III) oxide
+@sample_0@chemical_formula	Fe2O3
+@sample_0@additional_data	diluted with BN
+@measurement@method@name	XAFS
+@measurement@method@detection	Transmission
+@measurement@method@absorption_edge	Fe K
+@measurement@date@start_time	2019-06-28 16:20:33
+@measurement@date@end_time	2019-06-28 16:38:59
+@measurement@scan_mode	Step Scan
+@instrument@monochrometor@number	2
+@instrument@monochrometor@net_plane	Si(111)
+@instrument@monochrometor@distance	3.13551
+@instrument@monochrometor@distance_unit	A
+@instrument@section_0@start_energy	12.7185
+@instrument@section_0@start_energy_unit	deg
+@instrument@section_0@step_energy	12.7185
+@instrument@section_0@step_energy_unit	deg
+@instrument@section_0@end_energy	12.7185
+@instrument@section_0@end_energy_unit	deg
+@instrument@section_0@dwell_time	1.0
+@instrument@section_0@dwell_time_unit	sec
+@instrument@section_1@start_energy	12.7185
+@instrument@section_1@start_energy_unit	deg
+@instrument@section_1@step_energy	12.7185
+@instrument@section_1@step_energy_unit	deg
+@instrument@section_1@end_energy	12.7185
+@instrument@section_1@end_energy_unit	deg
+@instrument@section_1@dwell_time	1.0
+@instrument@section_1@dwell_time_unit	sec
+@instrument@section_2@start_energy	12.7185
+@instrument@section_2@start_energy_unit	deg
+@instrument@section_2@step_energy	12.7185
+@instrument@section_2@step_energy_unit	deg
+@instrument@section_2@end_energy	12.7185
+@instrument@section_2@end_energy_unit	deg
+@instrument@section_2@dwell_time	1.0
+@instrument@section_2@dwell_time_unit	sec
+@instrument@section_3@start_energy	12.7185
+@instrument@section_3@start_energy_unit	deg
+@instrument@section_3@step_energy	12.7185
+@instrument@section_3@step_energy_unit	deg
+@instrument@section_3@end_energy	12.7185
+@instrument@section_3@end_energy_unit	deg
+@instrument@section_3@dwell_time	1.0
+@instrument@section_3@dwell_time_unit	sec
+@instrument@section_4@start_energy	12.7185
+@instrument@section_4@start_energy_unit	deg
+@instrument@section_4@step_energy	12.7185
+@instrument@section_4@step_energy_unit	deg
+@instrument@section_4@end_energy	12.7185
+@instrument@section_4@end_energy_unit	deg
+@instrument@section_4@dwell_time	1.0
+@instrument@section_4@dwell_time_unit	sec
+@instrument@section_5@start_energy	12.7185
+@instrument@section_5@start_energy_unit	deg
+@instrument@section_5@step_energy	12.7185
+@instrument@section_5@step_energy_unit	deg
+@instrument@section_5@end_energy	12.7185
+@instrument@section_5@end_energy_unit	deg
+@instrument@section_5@dwell_time	1.0
+@instrument@section_5@dwell_time_unit	sec
+@instrument@xafs@I0@element_0@type	Ionization Chamber
+@instrument@xafs@I0@element_number	1
+@instrument@xafs@I1@element_0@type	Ionization Chamber
+@instrument@xafs@I1@element_number	1
+@local@xafs_filename_list_0	Fe011.dat
+@local@xafs_filename_list_1	metadata.yml
+@local@xafs_filename_list_2	thumbnail.png
