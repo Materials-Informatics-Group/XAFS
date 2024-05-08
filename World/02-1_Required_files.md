@@ -20,7 +20,7 @@ For example, instead of naming it A.txt / A.tsv, name it **001_A.txt / 001_A.tsv
 
 >
 > [!NOTE]
-> If raw data is **9809 format**, please utilize [the following code](/World/02-3_9809format.md).
+> If raw data is **9809 format**, please utilize [the following code](/World/02-2_9809format.md).
 >
 > The 9809 format is one of the measurement data formats output by the XAFS measurement program developed by Dr. Nomura, who oversees the XAFS beamlines at KEK PF, specifically for use on the XAFS beamlines at Photon Factory (Tsukuba, Japan).
 >
