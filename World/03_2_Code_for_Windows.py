@@ -177,10 +177,10 @@ for file_name in file_list:
     
     smallpeak_list.append([file_name1, file_name2, max(peak_ypositions), max_peak_xposition])
 
-df = pd.DataFrame(peak_list, columns=['Data_Number', 'Block', 'Peak_E0_μt', 'Peak_Max_μt', 'Peak_Width'])
+df = pd.DataFrame(peak_list, columns=['Data_Number', 'Block', 'XA_E0_Abs', 'XA_Max_Abs', 'XA_Peak_Wid'])
 df = df.sort_values(['Data_Number', 'Block'])
 
-df3 = pd.DataFrame(smallpeak_list, columns=['Data_Number', 'Block', 'Max_y', 'Max_y_xposition'])
+df3 = pd.DataFrame(smallpeak_list, columns=['Data_Number', 'Block', 'EX_Max_P', 'EX_MaxP_d'])
 df3 = df3.sort_values(['Data_Number', 'Block'])
 
 df4 = pd.merge(df, df3, on=["Data_Number", "Block"], how="inner")
@@ -190,7 +190,7 @@ df6 = pd.merge(result_df1, df4, on=["Data_Number"], how="inner")
 df12 = pd.read_csv('periodictable.csv')
 df13 = pd.merge(df6, df12, on=["Element"], how="inner")
 df13 = df13.sort_values(['Data_Number', 'Block'])
-columns_to_extract = ['Data_Number', 'Peak_E0_μt', 'Peak_Max_μt', 'Max_y_xposition', 'Max_y', 'vdw_radius_alvarez', 'Peak_Width', 'gs_energy', 'fusion_enthalpy', 'num_unfilled']
+columns_to_extract = ['Data_Number', 'XA_E0_Abs', 'XA_Max_Abs', 'EX_Max_P', 'EX_MaxP_d', 'vdw_radius_alvarez', 'XA_Peak_Wid', 'gs_energy', 'fusion_enthalpy', 'num_unfilled']
 
 df14 = df13[columns_to_extract]
 df14_reset = df14.reset_index(drop=True)
