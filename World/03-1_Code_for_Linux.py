@@ -283,7 +283,7 @@ data2_6 = pd.concat([data2_A_6, data2_B_6, data2_C_6], axis=1)
 datas2_6 = np.array(data2_6)
 model1_6V = RandomForestClassifier(random_state=0, n_estimators=80)
 model2_6V = MLPClassifier(random_state=0, solver='lbfgs', alpha=0.4, activation='tanh', max_iter=800)
-model_6V  = VotingClassifier(estimators=[('rf', model1_6V), ('mlp', model2_6V)], voting='soft', weights=[0.85, 0.15])
+model_6V  = VotingClassifier(estimators=[('rf', model1_6V), ('mlp', model2_6V)], voting='soft', weights=[0.8, 0.2])
 model_6V.fit(datas2_6, targets_B_6)
 pred3_6 = results_6.iloc[:, 1:6]
 pred4_6 = results_6.iloc[:, 7:-1]
