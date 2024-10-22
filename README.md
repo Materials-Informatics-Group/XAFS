@@ -9,3 +9,5 @@ Please click [here for details](/World/02-1_Required_files.md).
 The output data set mainly includes "prediction of whether the measured substance is an oxide or not and how many valence values it has (csv file)" and "a table summarizing the numerical values of each characteristic (csv file)" as auxiliary information. 
 Please click [here for details](/World/SampleData/Output_Example.md). 
 
+Please cite the paper if you use this code for publication.
+Miyasaka, Naotoshi, Fernando Gracia-Escobar, and Keisuke Takahashi. "Automatic Identification of X-ray Absorption Fine Structure Spectra via Machine Learning." The Journal of Physical Chemistry C (2024).
